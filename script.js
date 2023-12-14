@@ -106,7 +106,7 @@ palabras.forEach((palabra) => {
                     }
 
                     palabras[intentos-1].setAttribute('contenteditable','false');
-                    palabras[intentos].setAttribute('contenteditable','true ');
+                    palabras[intentos].setAttribute('contenteditable','true');
                     palabras[intentos].focus();
 
             }
