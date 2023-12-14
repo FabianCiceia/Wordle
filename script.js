@@ -1,4 +1,4 @@
-
+const botonRefrescar = document.getElementById('reiniciar');
 const url = 'https://random-word-api.herokuapp.com/word?lang=es&length=5';
 let respuesta = null;
 let respuestaImprimir = null;
@@ -73,6 +73,7 @@ palabras.forEach((palabra) => {
                             if(correctos == 5){
                                 resultado.classList.add('ganar');
                                 resultado.innerHTML = "HAS GANADO";
+                                botonRefrescar.classList.add('activo');
                                 return;
                             }
                         
@@ -81,11 +82,13 @@ palabras.forEach((palabra) => {
                             letras[i].classList.remove('seleccionada');
                             letras[i].classList.remove('ninguno');
                             letras[i].classList.add('parecido');
+
                             
                             
                         }else{ 
                             letras[i].classList.remove('seleccionada');
                             letras[i].classList.add('ninguno');
+                            
 
                         }
                         
@@ -93,6 +96,7 @@ palabras.forEach((palabra) => {
                     if(intentos>5){
                         resultado.classList.add('perder');
                         resultado.innerHTML = `HAS PERDIDO LA PALABRA ERA ${respuestaImprimir}`;
+                        botonRefrescar.classList.add('activo');
                         return;
                     }
 
@@ -103,7 +107,9 @@ palabras.forEach((palabra) => {
         }
     });
 });
-
+botonRefrescar.addEventListener('click', () => {
+    location.reload(); // Esta línea recarga la página
+  });
 
 function elementosComunes(array1, array2) {
     var elementosComunesArray = [];

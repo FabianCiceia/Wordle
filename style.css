@@ -150,3 +150,17 @@ h1{
     outline: none;
     caret-color: transparent;
 }
+#reiniciar{
+display: none;
+
+}
+#reiniciar.activo{
+    position: flex;
+    display: block;
+    font-size: 3vh;
+    margin-top: 2vh;
+    border-radius: 5px;
+    border: #4322ad solid 3px;
+    background-color: #d7d9d7;
+
+}
