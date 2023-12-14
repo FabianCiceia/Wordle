@@ -1,0 +1,152 @@
+body{
+    background-color: #abc1f8;
+}
+h1{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: fantasy;
+    color: #53da58;
+    font-size:5vh;
+}
+.conjuntoPalabras{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Estilos para la lista de letras */
+.palabra {
+    display: flex;
+    flex-direction: row;
+   
+
+}
+
+/* Estilos para cada letra en un cuadrado */
+.letra {
+    /*Animacion*/
+    transition: .5s, color .10s;
+    -webkit-transition: .5s, color .10s;
+    -moz-transition: .5s, color .10s;
+
+              
+ 
+                  
+
+    border: 3px solid #dee1e9;
+    border-radius: 5px;
+    width: 7vh;
+    height: 7vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    margin-right: 5px; 
+    margin-top: 5px;
+    font-family: fantasy;
+    font-size: x-large;
+}
+.letra.seleccionada{
+
+
+    border: 3px solid #c3c3c3;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    width: 7vh;
+    height: 7vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    margin-right: 5px; 
+    margin-top: 5px;
+    font-family: fantasy;
+    font-size: x-large;
+}
+.letra.correcto{
+
+    /*Animacion*/
+ 
+    transform: rotateX(360deg);
+    -webkit-transform: rotateX(360deg);
+    -moz-transform: rotateX(360deg);
+    
+
+    border: 3px solid #53da58;
+    color:#f7f7f7;
+    background-color: #53da58;
+    border-radius: 5px;
+    width: 7vh;
+    height: 7vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    margin-right: 5px; 
+    margin-top: 5px;
+    font-family: fantasy;
+    font-size: x-large;
+}
+.letra.parecido {
+    transform: rotateX(360deg);
+    -webkit-transform: rotateX(360deg);
+    -moz-transform: rotateX(360deg);
+    
+    border: 3px solid #dee1e9;
+    background-color: #e6f606;
+    border-radius: 5px;
+    width: 7vh;
+    height: 7vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    margin-right: 5px; 
+    margin-top: 5px;
+    font-family: fantasy;
+    font-size: x-large;
+}
+.letra.ninguno {
+    transform: rotateX(360deg);
+    -webkit-transform: rotateX(360deg);
+    -moz-transform: rotateX(360deg);
+    
+    border: 2px solid #779097;
+    color:#f7f7f7;
+    background-color: #8e8e95;
+    border-radius: 5px;
+    width: 7vh;
+    height: 7vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    margin-right: 5px; 
+    margin-top: 5px;
+    font-family: fantasy;
+    font-size: x-large;
+}
+
+#resultado{
+    display: none;
+    
+}
+#resultado.ganar{
+    display: block;
+    position: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #53da58;
+    font-family: fantasy;
+    font-size: 100px;
+}
+#resultado.perder{
+    display: block;
+    position: flex;
+    color: red;
+    font-family: fantasy;
+    flex-direction: column;
+    align-items: center;
+    font-size: 7vh;
+}
+
+[contenteditable="true"]:focus {
+    outline: none;
+    caret-color: transparent;
+}
