@@ -34,9 +34,11 @@ var letra_completada=[];
 
 const palabras = document.querySelectorAll(' .palabra');
 var intentos = 0;
+palabras[0].focus();
 palabras.forEach((palabra) => {
     const letras = palabra.querySelectorAll('.letra');
     let indice = 0;
+    
     palabra.addEventListener('keydown', function(event) {
        
       
@@ -44,6 +46,7 @@ palabras.forEach((palabra) => {
         event.preventDefault();
         if ((/^[a-zA-Z]$/).test(event.key)) {
             if (indice < letras.length) {
+                
                 letras[indice].innerText = event.key.toUpperCase();
                 letras[indice].classList.add('seleccionada'); 
                 palabraIngresada.push(event.key.toUpperCase());
@@ -74,6 +77,7 @@ palabras.forEach((palabra) => {
                                 resultado.classList.add('ganar');
                                 resultado.innerHTML = "HAS GANADO";
                                 botonRefrescar.classList.add('activo');
+                                botonRefrescar.focus();
                                 return;
                             }
                         
@@ -97,10 +101,12 @@ palabras.forEach((palabra) => {
                         resultado.classList.add('perder');
                         resultado.innerHTML = `HAS PERDIDO LA PALABRA ERA ${respuestaImprimir}`;
                         botonRefrescar.classList.add('activo');
+                        botonRefrescar.focus();
                         return;
                     }
 
                     palabras[intentos-1].setAttribute('contenteditable','false');
+                    palabras[intentos].setAttribute('contenteditable','true ');
                     palabras[intentos].focus();
 
             }
